@@ -49,7 +49,7 @@ def ask_groq(prompt, df_sample):
                 {"role": "system", "content": "You are a helpful data analyst who provides clear answers and generates visualization code when requested."},
                 {"role": "user", "content": enhanced_prompt}
             ],
-            "model": "llama3-70b-8192",
+            "model": "llama-3.1-70b-versatile",",
             "temperature": 0.3
         }
 
