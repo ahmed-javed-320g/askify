@@ -1,10 +1,12 @@
 import os
 import requests
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
+from streamlit import st
 from backend.cacheengine import check_cache, save_to_cache  # 👈 import caching
 
-load_dotenv()
-GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+#load_dotenv()
+#GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
 
 def ask_groq(prompt, df_sample):
     # 🔍 Step 1: Check cache
