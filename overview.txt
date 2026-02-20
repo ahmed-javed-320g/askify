@@ -1,0 +1,83 @@
+
+| Section                          
+| -------------------------------- 
+| 1. Introduction                  
+| 2. Problem & Motivation          
+| 3. Key Features Overview         
+| 4. Architecture Breakdown        
+| 5. AI & Query Handling Demo/Flow 
+| 6. Conclusion & Future Scope     
+
+
+## 🎤 1. Introduction (1 min)
+----
+
+## 🔍 2. Problem & Motivation (1 min)
+
+> "Many users—especially non-technical ones—struggle to explore CSV data. 
+Traditional tools like Excel or Python scripts can be overwhelming. 
+This chatbot bridges that gap by combining **AI + code execution + SQL + charting**, all behind a clean and simple chat interface."
+
+
+## 🚀 3. Key Features (2 mins)
+
+> "Here are some highlights of what the app can do:"
+
+* 📊 **Natural language queries** for stats, visualizations, or insights
+* ⚡ **Fast responses** for numeric queries (bypasses the AI)
+* 🧠 **Groq API + LLaMA 3 model** for smart, context-aware answers
+* 📈 **2D & 3D chart support**: pie, scatter, histogram, etc.
+* 💾 **Downloadable** charts and chat logs
+* 🎨 **Theme customization** and chat bubble-style UI
+* 🧮 **Token tracking** and API usage counter
+* 🔐 **Safe code execution**, input validation, and caching
+
+
+## 🧱 4. Architecture Breakdown (3 mins)
+
+
+### 🖥️ Frontend (Streamlit)
+
+* File upload + chat interface
+* Styled UI with chat bubbles, tabs, and metric cards
+* Session state to preserve user history
+
+### ⚙️ Backend
+
+* **Query classifier** → routes query: stats / SQL / AI / code
+* **Code executor** → safely runs Python code with result capture
+* **SQL runner** → translates natural queries into SQL and runs them on in-memory SQLite
+* **Charting engine** → plotly-powered visuals
+
+### 🤖 AI Integration
+
+* Groq API with **LLaMA3-70B**
+* Context-aware prompt templates
+* Smart fallback: direct Pandas execution when possible
+* Result caching with MD5-based keys
+
+### 📦 Caching System
+
+* Saves repeated query results using Pickle
+* Improves performance & reduces token cost
+
+
+## 🤹 5. Query Flow Example (2 mins)
+
+**Step-by-step flow:**
+
+1. Input detected as **numeric filter**
+2. Bypasses Groq → handled via Pandas
+3. Filters data and returns result instantly
+
+## 🧭 6. Conclusion & Future Scope (1 min)
+
+> "To wrap up, CSV Chatbot makes CSV exploration intuitive and interactive by combining powerful AI with a simple UI.
+It’s especially helpful for data analysts, students, and anyone who deals with raw datasets."
+
+### 🛠️ Future Improvements:
+
+* Chat threading and memory
+* Advanced chart customization
+* Multi-file support
+* Integration with databases and Google Sheets
