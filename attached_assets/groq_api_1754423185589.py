@@ -27,7 +27,7 @@ def ask_groq(prompt, df_sample):
             {"role": "user", "content": f"Here is a sample of the data:\n\n{df_sample}"},
             {"role": "user", "content": prompt}
         ],
-        "model": "llama3-70b-8192",
+        "model": "llama-3.1-70b-versatile",",
         "temperature": 0.3
     }
 
