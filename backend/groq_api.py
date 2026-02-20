@@ -1,12 +1,13 @@
 import os
 import requests
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
+import streamlit as st
 from backend.cacheengine import check_cache, save_to_cache
 from groq import Groq
 
-load_dotenv()
-GROQ_API_KEY = os.getenv("GROQ_API_KEY", "default_key")
-
+#load_dotenv()
+#GROQ_API_KEY = os.getenv("GROQ_API_KEY", "default_key")
+GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
 # Initialize Groq client for compatibility with llmrag.py
 groq_client = Groq(api_key=GROQ_API_KEY)
 
