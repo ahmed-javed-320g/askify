@@ -1,0 +1,7 @@
+groq>=0.30.0
+matplotlib>=3.10.5
+pandasql>=0.7.3
+plotly>=6.2.0
+python-dotenv>=1.1.1
+requests>=2.32.4
+streamlit>=1.47.1
